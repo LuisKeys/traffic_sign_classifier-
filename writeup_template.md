@@ -153,14 +153,14 @@ that can be tested with a GPU enabled system).
 ####1. I selected 6 german images 
 Here are five German traffic signs that I found on the web:
 
-![11_right_of_way.png](https://github.com/LuisKeys/traffic_sign_classifier-/tree/master/samples_from_web/11_right_of_way.png "Right Of Way")
-![13_yield.png](https://github.com/LuisKeys/traffic_sign_classifier-/tree/master/samples_from_web/13_yield.png "Yield")
-![1_speed_limit_30.png](https://github.com/LuisKeys/traffic_sign_classifier-/tree/master/samples_from_web/1_speed_limit_30.png "Speed Limit 30")
-![22_bumpyroad.png](https://github.com/LuisKeys/traffic_sign_classifier-/tree/master/samples_from_web/22_bumpyroad.png "Bumpy Road")
-![4_speed_limit_70.png](https://github.com/LuisKeys/traffic_sign_classifier-/tree/master/samples_from_web/4_speed_limit_70.png "Speed Limit 70")
-![4_speed_l7_speed_limit_100.png](https://github.com/LuisKeys/traffic_sign_classifier-/tree/master/samples_from_web/4_speed_l7_speed_limit_100.png "Speed Limit 100")
+![11_right_of_way.png](./samples_from_web/11_right_of_way.png "Right Of Way")
+![13_yield.png](./samples_from_web/13_yield.png "Yield")
+![1_speed_limit_30.png](./samples_from_web/1_speed_limit_30.png "Speed Limit 30")
+![22_bumpyroad.png](./samples_from_web/22_bumpyroad.png "Bumpy Road")
+![4_speed_limit_70.png](./samples_from_web/4_speed_limit_70.png "Speed Limit 70")
+![4_speed_l7_speed_limit_100.png](./samples_from_web/7_speed_limit_100.png "Speed Limit 100")
 
-In particular Speed Limit 100 is in perspective hence hard to clasify for the model.
+In particular Speed Limit 30 and 100 is in perspective hence hard to clasify for the model.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -168,7 +168,7 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Right Of Way      		| Right Of Wa   									| 
+| Right Of Way      		| Right Of Way 									| 
 | Yield     			| Yield 										|
 | Bumpy Road					| Bumpy Road											|
 | Speed Limit 30					| Speed Limit 50											|
