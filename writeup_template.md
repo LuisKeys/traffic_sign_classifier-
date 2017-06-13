@@ -58,7 +58,7 @@ which has a quite good performance.
 
 
 One histogram for each labels data (training, validation and testing) was rendered:
-![traininghist.png](./examples/traininghist.png "Training histogram")
+![traininhist.png](./examples/traininhist.png "Training histogram")
 ![validationhist.png](./examples/validationhist.png "Validation histogram")
 ![testinghist.png](./examples/testinghist.png "Testing histogram")
 
@@ -208,6 +208,7 @@ For the first image, the model is slighty sure that this is a speed limit 30 (pr
 | .07				    | Roundabout mandatory							|
 
 For the second image the model fails, predicting Go straight or left
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .15         			| Go straight or left							| 
@@ -219,6 +220,7 @@ For the second image the model fails, predicting Go straight or left
 
 For the third image the model predicts wrong a No passing for vehicles over 3.5 metric tons
 for a expected Speed limit 70 sign
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .15         			| No passing for vehicles over 3.5 metric tons	| 
@@ -229,6 +231,7 @@ for a expected Speed limit 70 sign
 | .01				    | Dangerous curve to the right 					|
 
 For the fourth image the model predicts correctly a Right Of Way with a 31% probability
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .31        			| Right-of-way at the next intersection			| 
@@ -239,6 +242,7 @@ For the fourth image the model predicts correctly a Right Of Way with a 31% prob
 | .00				    | Roundabout mandatory							|
 
 For the image five the model predicts correctly a Yield a 73% probability
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .73        			| Yield   										| 
@@ -250,6 +254,7 @@ For the image five the model predicts correctly a Yield a 73% probability
 
 For the image six the model predicts correctly a Bumpy Road, however
 with a quite low probability of 17%
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .17        			| Bumpy Road	   								| 
