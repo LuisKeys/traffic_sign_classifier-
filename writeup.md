@@ -137,9 +137,9 @@ files from the web).
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-Training Accuracy = 0.983
-Validation Accuracy = 0.922
-Testing Accuracy = 0.905
+Training Accuracy = 0.998
+Validation Accuracy = 0.928
+Testing Accuracy = 0.924
 
 Accuracy note: I noticed that when increasing the epochs number
 the model was overfiting and becoming wors when generalizing 
@@ -184,9 +184,9 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Speed Limit 30		| Speed Limit 30								|
-| Speed Limit 70	    | Go straight or left			 				|
+| Speed Limit 70	    | Speed limit (20km/h)			 				|
 | Speed Limit 100		| No passing for vehicles over 3.5 metric tons	|
-| Right Of Way      	| Right Of Way 									| 
+| Right Of Way      	| Right-of-way at the next intersection 		| 
 | Yield     			| Yield 										|
 | Bumpy Road			| Bumpy Road									|
 
@@ -196,85 +196,73 @@ This is reasonable because of the quality of the images not correctly predicted.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-For the first image, the model is slighty sure that this is a speed limit 30 (probability of 21%)
+For the first image, the model is 100% sure that this is a speed limit 30 (probability of 100%)
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .21         			| Speed limit (30km/h)							| 
-| .16     				| Speed limit (50km/h)							|
-| .11					| Wild animals crossing							|
-| .10	      			| Keep left 					 				|
-| .08				    | Double Curve 									|
-| .07				    | Roundabout mandatory							|
+| 1.0         			| Speed limit (30km/h)							| 
+| .0     				| Speed limit (50km/h)							|
+| .0					| Roundabout mandatory							|
+| .0	      			| Speed limit (100km/h) 		 				|
+| .0				    | Speed limit (80km/h) 							|
+| .0				    | Speed limit (60km/h)							|
 
 
-
-
-For the second image the model fails, predicting Go straight or left
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .15         			| Go straight or left							| 
-| .14     				| Roundabout mandatory							|
-| .07					| General caution								|
-| .04	      			| Vehicles over 3.5 metric tons prohibited		|
-| .02				    | Bicycles crossing								|
-| .01				    | Traffic signals  								|
-
-
-
-
-For the third image the model predicts wrong a No passing for vehicles over 3.5 metric tons
-for a expected Speed limit 70 sign
+For the second image the model predicts wrong with a 90% a Speed limit (20km/h)
+for a expected Speed limit 70 sign, and the second prediction is the correct one
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .15         			| No passing for vehicles over 3.5 metric tons	| 
-| .14     				| Roundabout mandatory							|
-| .07					| Speed Limit 30								|
-| .04	      			| Speed limit (120km/h) 		 				|
-| .02				    | No passing     								|
-| .01				    | Dangerous curve to the right 					|
+| .90         			| Speed limit (20km/h)							| 
+| .09     				| Speed limit (70km/h)							|
+| .01					| Speed limit (30km/h)							|
+| .00	      			| Roundabout mandatory							|
+| .00				    | Speed limit (100km/h)							|
+| .00				    | Keep right 									|
 
-
-
-
-For the fourth image the model predicts correctly a Right Of Way with a 31% probability
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .31        			| Right-of-way at the next intersection			| 
-| .10     				| General caution 								|
-| .08					| Priority road      							|
-| .04	      			| Pedestrians 					 				|
-| .02				    | Beware of ice/snow							|
-| .00				    | Roundabout mandatory							|
-
-
-
-
-For the image five the model predicts correctly a Yield a 73% probability
+For the third image the model predicts wrong with a 70% a No passing for vehicles over 3.5 metric tons
+for a expected Speed limit 100 sign, and the third probability is for the expected sign
+but with only a 6%
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .73        			| Yield   										| 
-| .26     				| Children crossing								|
-| .13					| Speed limit (80km/h)							|
-| .12	      			| No passing 					 				|
-| .05				    | Speed limit (60km/h)							|
-| .01				    | No vehicles     								|
+| .70         			| No passing for vehicles over 3.5 metric tons	| 
+| .23     				| Roundabout mandatory							|
+| .06					| Speed limit (100km/h)							|
+| .00	      			| Vehicles over 3.5 metric tons prohibited		|
+| .00				    | No passing     								|
+| .00				    | Go straight or left 							|
 
-
-
-
-For the image six the model predicts correctly a Bumpy Road, however
-with a quite low probability of 17%
+For the fourth image the model predicts correctly a Right Of Way with a 99% probability
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .17        			| Bumpy Road	   								| 
-| .10     				| Dangerous curve to the right					|
-| .07					| Bicycles crossing								|
-| .06	      			| Children crossing				 				|
-| .04				    | Slippery road									|
-| .04				    | Ahead only     								|
+| .99        			| Right-of-way at the next intersection			| 
+| .00     				| General caution 								|
+| .00					| Beware of ice/snow   							|
+| .00	      			| Pedestrians 					 				|
+| .00				    | End of no passing by vehicles over 3.5 metric tons|
+| .00				    | Priority Road									|
+
+For the image five the model predicts correctly a Yield a 100% probability
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0        			| Yield   										| 
+| .00     				| Keep right									|
+| .00					| No passing									|
+| .00	      			| Turn left ahead 					 			|
+| .00				    | No passing for vehicles over 3.5 metric tons	|
+| .00				    | Ahead only     								|
+
+For the image six the model predicts correctly a Bumpy Road, with a 99%
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .99        			| Bumpy Road	   								| 
+| .00    				| Children crossing								|
+| .00					| Dangerous curve to the right					|
+| .00	      			| No passing				 					|
+| .00				    | Keep right									|
+| .00				    | Yield     									|
+
