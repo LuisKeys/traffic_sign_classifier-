@@ -207,6 +207,9 @@ For the first image, the model is slighty sure that this is a speed limit 30 (pr
 | .08				    | Double Curve 									|
 | .07				    | Roundabout mandatory							|
 
+
+
+
 For the second image the model fails, predicting Go straight or left
 
 | Probability         	|     Prediction	        					| 
@@ -217,6 +220,9 @@ For the second image the model fails, predicting Go straight or left
 | .04	      			| Vehicles over 3.5 metric tons prohibited		|
 | .02				    | Bicycles crossing								|
 | .01				    | Traffic signals  								|
+
+
+
 
 For the third image the model predicts wrong a No passing for vehicles over 3.5 metric tons
 for a expected Speed limit 70 sign
@@ -230,6 +236,9 @@ for a expected Speed limit 70 sign
 | .02				    | No passing     								|
 | .01				    | Dangerous curve to the right 					|
 
+
+
+
 For the fourth image the model predicts correctly a Right Of Way with a 31% probability
 
 | Probability         	|     Prediction	        					| 
@@ -241,6 +250,9 @@ For the fourth image the model predicts correctly a Right Of Way with a 31% prob
 | .02				    | Beware of ice/snow							|
 | .00				    | Roundabout mandatory							|
 
+
+
+
 For the image five the model predicts correctly a Yield a 73% probability
 
 | Probability         	|     Prediction	        					| 
@@ -251,6 +263,9 @@ For the image five the model predicts correctly a Yield a 73% probability
 | .12	      			| No passing 					 				|
 | .05				    | Speed limit (60km/h)							|
 | .01				    | No vehicles     								|
+
+
+
 
 For the image six the model predicts correctly a Bumpy Road, however
 with a quite low probability of 17%
