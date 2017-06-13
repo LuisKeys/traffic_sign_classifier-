@@ -127,9 +127,14 @@ files from the web).
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.931 --------------Put correct accuracey here----------------------------------------
-* validation set accuracy of 0.931
-* test set accuracy of 0.931
+Training Accuracy = 0.983
+Validation Accuracy = 0.922
+Testing Accuracy = 0.905
+
+Accuracy note: I noticed that when increasing the epochs number
+the model was overfiting and becoming wors when generalizing 
+with new samples. hence I decided to keep accuracy values relative low
+due to that reason. 
 
 After running the model for the first time with smaller batch size (128),
 no more than 10 epochs, a lower training rate (0.001) and without dropout,
@@ -168,12 +173,12 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Right Of Way      		| Right Of Way 									| 
+| Speed Limit 30		| Speed Limit 30								|
+| Speed Limit 70	    | Go straight or left			 				|
+| Speed Limit 100		| No passing for vehicles over 3.5 metric tons	|
+| Right Of Way      	| Right Of Way 									| 
 | Yield     			| Yield 										|
-| Bumpy Road					| Bumpy Road											|
-| Speed Limit 30					| Speed Limit 50											|
-| Speed Limit 70	      		| Speed Limit 70					 				|
-| Speed Limit 100			| Speed Limit 50      							|
+| Bumpy Road			| Bumpy Road									|
 
 
 The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66.66%. 
@@ -181,20 +186,65 @@ This is reasonable because of the quality of the images not correctly predicted.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is slighty sure that this is a speed limit 30 (probability of 21%)
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .21         			| Speed limit (30km/h)							| 
+| .16     				| Speed limit (50km/h)							|
+| .11					| Wild animals crossing							|
+| .10	      			| Keep left 					 				|
+| .08				    | Double Curve 									|
+| .07				    | Roundabout mandatory							|
 
+For the second image the model fails, predicting Go straight or left
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .15         			| Go straight or left							| 
+| .14     				| Roundabout mandatory							|
+| .07					| General caution								|
+| .04	      			| Vehicles over 3.5 metric tons prohibited		|
+| .02				    | Bicycles crossing								|
+| .01				    | Traffic signals  								|
 
-For the second image ... 
+For the third image the model predicts wrong a No passing for vehicles over 3.5 metric tons
+for a expected Speed limit 70 sign
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .15         			| No passing for vehicles over 3.5 metric tons	| 
+| .14     				| Roundabout mandatory							|
+| .07					| Speed Limit 30								|
+| .04	      			| Speed limit (120km/h) 		 				|
+| .02				    | No passing     								|
+| .01				    | Dangerous curve to the right 					|
 
+For the fourth image the model predicts correctly a Right Of Way with a 31% probability
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .31        			| Right-of-way at the next intersection			| 
+| .10     				| General caution 								|
+| .08					| Priority road      							|
+| .04	      			| Pedestrians 					 				|
+| .02				    | Beware of ice/snow							|
+| .00				    | Roundabout mandatory							|
 
+For the image five the model predicts correctly a Yield a 73% probability
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .73        			| Yield   										| 
+| .26     				| Children crossing								|
+| .13					| Speed limit (80km/h)							|
+| .12	      			| No passing 					 				|
+| .05				    | Speed limit (60km/h)							|
+| .01				    | No vehicles     								|
 
+For the image six the model predicts correctly a Bumpy Road, however
+with a quite low probability of 17%
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .17        			| Bumpy Road	   								| 
+| .10     				| Dangerous curve to the right					|
+| .07					| Bicycles crossing								|
+| .06	      			| Children crossing				 				|
+| .04				    | Slippery road									|
+| .04				    | Ahead only     								|
